@@ -44,6 +44,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@material/web": "^1.4.1",
     "@stencil/sass": "^3.0.11"
   }
 }

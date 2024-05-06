@@ -5,7 +5,15 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { SizeEnum } from "./utils/enums/Size";
+export { SizeEnum } from "./utils/enums/Size";
 export namespace Components {
+    interface EmersonCircles {
+    }
+    interface EmersonDots {
+    }
+    interface EmersonHeaderText {
+    }
     interface EmersonHint {
         "closable": boolean;
         "darkmode": boolean;
@@ -20,12 +28,54 @@ export namespace Components {
         "name": string;
         "size": string;
     }
+    interface EmersonProgressBar {
+        "headertext": string;
+        "label": boolean;
+        "progress": number;
+        "size": SizeEnum;
+    }
+    interface EmersonSpinner {
+        "darkmode": boolean;
+        "value": number;
+    }
     interface MaterialInput {
         "label": string;
         "placeholder": string;
     }
+    interface MyComponent {
+        /**
+          * The first name
+         */
+        "first": string;
+        /**
+          * The last name
+         */
+        "last": string;
+        /**
+          * The middle name
+         */
+        "middle": string;
+    }
 }
 declare global {
+    interface HTMLEmersonCirclesElement extends Components.EmersonCircles, HTMLStencilElement {
+    }
+    var HTMLEmersonCirclesElement: {
+        prototype: HTMLEmersonCirclesElement;
+        new (): HTMLEmersonCirclesElement;
+    };
+    interface HTMLEmersonDotsElement extends Components.EmersonDots, HTMLStencilElement {
+    }
+    var HTMLEmersonDotsElement: {
+        prototype: HTMLEmersonDotsElement;
+        new (): HTMLEmersonDotsElement;
+    };
+    interface HTMLEmersonHeaderTextElement extends Components.EmersonHeaderText, HTMLStencilElement {
+    }
+    var HTMLEmersonHeaderTextElement: {
+        prototype: HTMLEmersonHeaderTextElement;
+        new (): HTMLEmersonHeaderTextElement;
+    };
     interface HTMLEmersonHintElement extends Components.EmersonHint, HTMLStencilElement {
     }
     var HTMLEmersonHintElement: {
@@ -38,19 +88,49 @@ declare global {
         prototype: HTMLEmersonIconElement;
         new (): HTMLEmersonIconElement;
     };
+    interface HTMLEmersonProgressBarElement extends Components.EmersonProgressBar, HTMLStencilElement {
+    }
+    var HTMLEmersonProgressBarElement: {
+        prototype: HTMLEmersonProgressBarElement;
+        new (): HTMLEmersonProgressBarElement;
+    };
+    interface HTMLEmersonSpinnerElement extends Components.EmersonSpinner, HTMLStencilElement {
+    }
+    var HTMLEmersonSpinnerElement: {
+        prototype: HTMLEmersonSpinnerElement;
+        new (): HTMLEmersonSpinnerElement;
+    };
     interface HTMLMaterialInputElement extends Components.MaterialInput, HTMLStencilElement {
     }
     var HTMLMaterialInputElement: {
         prototype: HTMLMaterialInputElement;
         new (): HTMLMaterialInputElement;
     };
+    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    }
+    var HTMLMyComponentElement: {
+        prototype: HTMLMyComponentElement;
+        new (): HTMLMyComponentElement;
+    };
     interface HTMLElementTagNameMap {
+        "emerson-circles": HTMLEmersonCirclesElement;
+        "emerson-dots": HTMLEmersonDotsElement;
+        "emerson-header-text": HTMLEmersonHeaderTextElement;
         "emerson-hint": HTMLEmersonHintElement;
         "emerson-icon": HTMLEmersonIconElement;
+        "emerson-progress-bar": HTMLEmersonProgressBarElement;
+        "emerson-spinner": HTMLEmersonSpinnerElement;
         "material-input": HTMLMaterialInputElement;
+        "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface EmersonCircles {
+    }
+    interface EmersonDots {
+    }
+    interface EmersonHeaderText {
+    }
     interface EmersonHint {
         "closable"?: boolean;
         "darkmode"?: boolean;
@@ -65,23 +145,59 @@ declare namespace LocalJSX {
         "name"?: string;
         "size"?: string;
     }
+    interface EmersonProgressBar {
+        "headertext"?: string;
+        "label"?: boolean;
+        "progress"?: number;
+        "size"?: SizeEnum;
+    }
+    interface EmersonSpinner {
+        "darkmode"?: boolean;
+        "value"?: number;
+    }
     interface MaterialInput {
         "label"?: string;
         "placeholder"?: string;
     }
+    interface MyComponent {
+        /**
+          * The first name
+         */
+        "first"?: string;
+        /**
+          * The last name
+         */
+        "last"?: string;
+        /**
+          * The middle name
+         */
+        "middle"?: string;
+    }
     interface IntrinsicElements {
+        "emerson-circles": EmersonCircles;
+        "emerson-dots": EmersonDots;
+        "emerson-header-text": EmersonHeaderText;
         "emerson-hint": EmersonHint;
         "emerson-icon": EmersonIcon;
+        "emerson-progress-bar": EmersonProgressBar;
+        "emerson-spinner": EmersonSpinner;
         "material-input": MaterialInput;
+        "my-component": MyComponent;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "emerson-circles": LocalJSX.EmersonCircles & JSXBase.HTMLAttributes<HTMLEmersonCirclesElement>;
+            "emerson-dots": LocalJSX.EmersonDots & JSXBase.HTMLAttributes<HTMLEmersonDotsElement>;
+            "emerson-header-text": LocalJSX.EmersonHeaderText & JSXBase.HTMLAttributes<HTMLEmersonHeaderTextElement>;
             "emerson-hint": LocalJSX.EmersonHint & JSXBase.HTMLAttributes<HTMLEmersonHintElement>;
             "emerson-icon": LocalJSX.EmersonIcon & JSXBase.HTMLAttributes<HTMLEmersonIconElement>;
+            "emerson-progress-bar": LocalJSX.EmersonProgressBar & JSXBase.HTMLAttributes<HTMLEmersonProgressBarElement>;
+            "emerson-spinner": LocalJSX.EmersonSpinner & JSXBase.HTMLAttributes<HTMLEmersonSpinnerElement>;
             "material-input": LocalJSX.MaterialInput & JSXBase.HTMLAttributes<HTMLMaterialInputElement>;
+            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
 }

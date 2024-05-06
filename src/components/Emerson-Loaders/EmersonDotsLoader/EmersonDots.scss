@@ -1,0 +1,110 @@
+:host {
+    .dots__wrapper {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        height: 12px;
+        width: 32px;
+        background-color: black;
+        padding: 20px;
+
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #fff;
+            border-radius: 50px;
+            opacity: 0;
+            animation: dot-flashing 1s infinite linear;
+        }
+
+        .dot:nth-child(1) { animation-delay: 0.5s }
+        .dot:nth-child(2) { animation-delay: 1s }
+        .dot:nth-child(3) { animation-delay: 1.5s }
+
+        .dot-flashing {
+            position: relative;
+            width: 8px;
+            height: 8px;
+            border-radius: 5px;
+            background-color: #FFFFFF;
+            color: #FFFFFF;
+            animation: dot-flashing 1s infinite linear alternate;
+            animation-delay: 0.5s;
+          }
+          .dot-flashing::before, .dot-flashing::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+          }
+          .dot-flashing::before {
+            left: -15px;
+            width: 8px;
+            height: 8px;
+            border-radius: 5px;
+            background-color: #FFFFFF;
+            color: #FFFFFF;
+            animation: dot-flashing 1s infinite alternate;
+            animation-delay: 0s;
+          }
+          .dot-flashing::after {
+            left: 15px;
+            width: 8px;
+            height: 8px;
+            border-radius: 5px;
+            background-color: #FFFFFF;
+            color: #FFFFFF;
+            animation: dot-flashing 1s infinite alternate;
+            animation-delay: 1s;
+          }
+          
+          @keyframes dot-flashing {
+            0% {
+              opacity: 0;
+            }
+            
+            50%, 100% {
+              opacity: 1;
+            }
+          }
+        }
+}
+
+// :host {
+//   .dots__wrapper {
+//       display: flex;
+//       gap: 4px;
+//       align-items: center;
+//       height: 12px;
+//       width: 32px;
+//       background-color: black;
+//       padding: 20px;
+
+//       .dot {
+//           height: 8px;
+//           width: 8px;
+//           background-color: #fff;
+//           border-radius: 50px;
+//           opacity: 0;
+//           animation: dot-flashing 1s infinite linear;
+//       }
+
+//       .dot:nth-child(1) { animation-delay: .33s }
+//       .dot:nth-child(2) { animation-delay: .66s }
+//       .dot:nth-child(3) { animation-delay: 1s }
+
+        
+//         @keyframes dot-flashing {
+//           0% {
+//             opacity: 0;
+//           }
+//           15% {
+//             opacity: 0.15;
+//           }
+//           100% {
+//             opacity: 1;
+//           }
+//         }
+//       }
+// }
+

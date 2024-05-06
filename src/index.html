@@ -16,7 +16,20 @@
 </head>
 
 <body>
-  <div style="display: flex; justify-content: center; gap: 0.5rem; padding-top: 5rem; flex-wrap: wrap;">
+  <emerson-progress-bar size="medium"></emerson-progress-bar>
+  <emerson-progress-bar size="large"></emerson-progress-bar>
+  <emerson-progress-bar label></emerson-progress-bar>
+  <emerson-progress-bar label size="large"></emerson-progress-bar>
+  <emerson-progress-bar label size="medium" headertext="Test Header"></emerson-progress-bar>
+  <emerson-progress-bar label size="large" headertext="Test Header"></emerson-progress-bar>
+
+  <emerson-spinner value="0.1"></emerson-spinner>
+  <emerson-spinner darkmode></emerson-spinner>
+  <div style="display: flex; gap: 10px;">
+    <emerson-circles></emerson-circles>
+    <emerson-dots></emerson-dots>
+  </div>
+  <!-- <div style="display: flex; justify-content: center; gap: 0.5rem; padding-top: 5rem; flex-wrap: wrap;">
 
   <div style="display: flex; align-items: center; flex-direction: column; gap: 10px; padding: 10px;">
     <emerson-hint withtitle darkmode="false" vertical>
@@ -288,7 +301,23 @@
     <emerson-hint withimage darkmode="true" withlink closable>
       Companion points are used to create an orbit. The angle between the 2 points must be 90deg.
     </emerson-hint>
-  </div>
+  </div> -->
+
+  <script>
+    let value = 0;
+    function updateValue() {
+      const progressBar = document.querySelectorAll('emerson-progress-bar');
+      const spinner = document.querySelectorAll('emerson-spinner');
+
+      if(value < 1) {
+        value += 0.1;
+        progressBar.forEach(bar => bar.setAttribute('progress', value));
+        spinner.forEach(spinner => spinner.setAttribute('value', value));
+      }
+    }
+
+    setInterval(() => updateValue(), 1000)
+  </script>
 
 </body>
 
